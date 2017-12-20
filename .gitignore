@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 .DS_Store
+.*.Rnb.cached
+_publish.R
+_bookdown_files

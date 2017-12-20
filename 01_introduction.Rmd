@@ -24,9 +24,7 @@ Don't get too caught up on public versus private at this point. There are many w
 
 ## Is it going to hurt?
 
-**Yes.**
-
-<iframe src="https://giphy.com/embed/3orieRD38kWpq422UU" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-12-the-simpsons-12x18-3orieRD38kWpq422UU">via GIPHY</a></p>
+Yes.
 
 You have to install Git, get local Git talking to GitHub, and make sure RStudio can talk to local Git (and, therefore, GitHub). This is one-time or once-per-computer pain.
 
@@ -40,7 +38,9 @@ For new or existing projects, you will:
   * Push commits to GitHub periodically.
     - This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you're ready to make your work visible to others and invite comment or edits.
   
-This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. Do you use GitHub to work with other people or to coordinate your own work from multiple computers? If so, after you recover from the initial setup, Git will crush you again with **merge conflicts**. And this is not one-time pain, this could be a dull ache for a long time. The best remedy is prevention, but also understanding how to back out of tricky situations and tackle them on your own terms.
+This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. FWIW, [STAT 545](http://stat545.com) students are required to submit all coursework via GitHub. This is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.
+
+More bad news. The [STAT 545](http://stat545.com) pain is short-lived because students primarily work in their own repositories. Do you use GitHub to work with other people or to coordinate your own work from multiple computers? If so, after you recover from the initial setup, Git will crush you again with **merge conflicts**. And this is not one-time pain, this could be a dull ache for a long time. The best remedy is prevention, but also understanding how to back out of tricky situations and tackle them on your own terms.
 
 The rest of this site is dedicated to walking you through the necessary setup and creating your first few Git projects. We conclude with prompts that guide you through some of the more advanced usage that makes all of this initial pain worthwhile.
 
