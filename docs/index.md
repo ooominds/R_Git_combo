@@ -1,19 +1,18 @@
 ---
 title: "R and Git combo"
 author: "Tania Allard"
-date: "2017-12-20"
+date: "2018-01-02"
 site: bookdown::bookdown_site
 description: "Winning R and Git combo!"
 output:
-  bookdown::gitbook: default
+  bookdown::gitbook: 
+    highlight: pygments
 documentclass: book"
 ---
 
-# A work in progress {-}
+# RSE Induction: R and Git combo
 
-<img src="img/watch-me-diff-watch-me-rebase-smaller.png" width="669" height="400" alt="Cover image" />  
-
-Still from [Heaven King video](https://www.youtube.com/watch?v=uBWrpVrazzA)
+<img src="images/git_confuse.jpg" width="669" height="400" alt="Cover image" />  
 
 
 Repo that makes this site: <https://github.com/trallard/R_Git_combo>

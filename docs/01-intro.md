@@ -1,4 +1,4 @@
-# Why Git? Why GitHub? {#big-picture}
+# Why Git? Why GitHub? 
 
 Why would a data analyst use hosted version control?
 
@@ -38,10 +38,7 @@ For new or existing projects, you will:
   * Push commits to GitHub periodically.
     - This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you're ready to make your work visible to others and invite comment or edits.
   
-This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. FWIW, [STAT 545](http://stat545.com) students are required to submit all coursework via GitHub. This is a major topic in class and office hours for the first two weeks. Then we practically never discuss it again.
-
-More bad news. The [STAT 545](http://stat545.com) pain is short-lived because students primarily work in their own repositories. Do you use GitHub to work with other people or to coordinate your own work from multiple computers? If so, after you recover from the initial setup, Git will crush you again with **merge conflicts**. And this is not one-time pain, this could be a dull ache for a long time. The best remedy is prevention, but also understanding how to back out of tricky situations and tackle them on your own terms.
-
+This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. 
 The rest of this site is dedicated to walking you through the necessary setup and creating your first few Git projects. We conclude with prompts that guide you through some of the more advanced usage that makes all of this initial pain worthwhile.
 
 ## What is the payoff?
