@@ -81,3 +81,6 @@ If you click on "commits," you should see one with the message "init".
 Now just ... repeat. Do work somewhere. Commit it. Push it or pull it\* depending on where you did it, but get local and remote "synced up". Repeat.
 
 \* Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it's a good idea to try and get into the habit of pulling before you attempt to push.
+
+
+<img src="images/git_hate.jpg" alt="git close">
