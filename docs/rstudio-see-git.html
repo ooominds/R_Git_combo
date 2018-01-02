@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R and Git combo</title>
+  <meta name="description" content="Winning R and Git combo!">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R and Git combo" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Winning R and Git combo!" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R and Git combo" />
+  
+  <meta name="twitter:description" content="Winning R and Git combo!" />
+  
+
+<meta name="author" content="Tania Allard">
+
+
+<meta name="date" content="2018-01-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="rstudio-git-github.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Git and R combo</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>RSE Induction: R and Git combo</a></li>
+<li class="chapter" data-level="1" data-path="why-git-why-github.html"><a href="why-git-why-github.html"><i class="fa fa-check"></i><b>1</b> Why Git? Why GitHub?</a><ul>
+<li class="chapter" data-level="1.1" data-path="why-git-why-github.html"><a href="why-git-why-github.html#why-git"><i class="fa fa-check"></i><b>1.1</b> Why Git?</a></li>
+<li class="chapter" data-level="1.2" data-path="why-git-why-github.html"><a href="why-git-why-github.html#why-github"><i class="fa fa-check"></i><b>1.2</b> Why GitHub?</a></li>
+<li class="chapter" data-level="1.3" data-path="why-git-why-github.html"><a href="why-git-why-github.html#is-it-going-to-hurt"><i class="fa fa-check"></i><b>1.3</b> Is it going to hurt?</a></li>
+<li class="chapter" data-level="1.4" data-path="why-git-why-github.html"><a href="why-git-why-github.html#what-is-the-payoff"><i class="fa fa-check"></i><b>1.4</b> What is the payoff?</a></li>
+<li class="chapter" data-level="1.5" data-path="why-git-why-github.html"><a href="why-git-why-github.html#who-can-do-what"><i class="fa fa-check"></i><b>1.5</b> Who can do what?</a></li>
+<li class="chapter" data-level="1.6" data-path="why-git-why-github.html"><a href="why-git-why-github.html#special-features-of-github"><i class="fa fa-check"></i><b>1.6</b> Special features of GitHub</a></li>
+<li class="chapter" data-level="1.7" data-path="why-git-why-github.html"><a href="why-git-why-github.html#whats-special-about-using-r-with-git-and-github"><i class="fa fa-check"></i><b>1.7</b> What’s special about using R with Git and GitHub?</a></li>
+<li class="chapter" data-level="1.8" data-path="why-git-why-github.html"><a href="why-git-why-github.html#audience-and-pre-reqs"><i class="fa fa-check"></i><b>1.8</b> Audience and pre-reqs</a></li>
+<li class="chapter" data-level="1.9" data-path="why-git-why-github.html"><a href="why-git-why-github.html#what-this-is-not"><i class="fa fa-check"></i><b>1.9</b> What this is NOT</a></li>
+</ul></li>
+<li class="part"><span><b>I Installation</b></span><ul>
+<li class="chapter" data-level="1.10" data-path="08_see_Git.html"><a href="#github-account"><i class="fa fa-check"></i><b>1.10</b> GitHub account</a></li>
+<li class="chapter" data-level="1.11" data-path="why-git-why-github.html"><a href="why-git-why-github.html#username-advice"><i class="fa fa-check"></i><b>1.11</b> Username advice</a></li>
+<li class="chapter" data-level="1.12" data-path="why-git-why-github.html"><a href="why-git-why-github.html#r-and-rstudio"><i class="fa fa-check"></i><b>1.12</b> R and Rstudio</a><ul>
+<li class="chapter" data-level="1.12.1" data-path="why-git-why-github.html"><a href="why-git-why-github.html#more-about-r-and-rstudio"><i class="fa fa-check"></i><b>1.12.1</b> More about R and RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="why-git-why-github.html"><a href="why-git-why-github.html#git"><i class="fa fa-check"></i><b>1.13</b> Git</a><ul>
+<li class="chapter" data-level="1.13.1" data-path="why-git-why-github.html"><a href="why-git-why-github.html#git-already-installed"><i class="fa fa-check"></i><b>1.13.1</b> Git already installed?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.14" data-path="why-git-why-github.html"><a href="why-git-why-github.html#usrbingit"><i class="fa fa-check"></i><b>1.14</b> /usr/bin/git</a></li>
+<li class="chapter" data-level="1.15" data-path="why-git-why-github.html"><a href="why-git-why-github.html#git-version-2.14.3-apple-git-98"><i class="fa fa-check"></i><b>1.15</b> git version 2.14.3 (Apple Git-98)</a><ul>
+<li class="chapter" data-level="1.15.1" data-path="why-git-why-github.html"><a href="why-git-why-github.html#windows"><i class="fa fa-check"></i><b>1.15.1</b> Windows</a></li>
+<li class="chapter" data-level="1.15.2" data-path="why-git-why-github.html"><a href="why-git-why-github.html#mac-os"><i class="fa fa-check"></i><b>1.15.2</b> Mac OS</a></li>
+<li class="chapter" data-level="1.15.3" data-path="why-git-why-github.html"><a href="why-git-why-github.html#linux"><i class="fa fa-check"></i><b>1.15.3</b> Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-git.html"><a href="introduction-to-git.html"><i class="fa fa-check"></i><b>2</b> Introduction to Git</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-git.html"><a href="introduction-to-git.html#more-about-git-config"><i class="fa fa-check"></i><b>2.1</b> More about <code>git config</code></a></li>
+</ul></li>
+<li class="part"><span><b>II Connect Git, GitHub, RStudio</b></span><ul>
+<li class="chapter" data-level="2.2" data-path="08_see_Git.html"><a href="#make-a-repo-on-github"><i class="fa fa-check"></i><b>2.2</b> Make a repo on GitHub</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-git.html"><a href="introduction-to-git.html#clone-the-repo-to-your-local-computer"><i class="fa fa-check"></i><b>2.3</b> Clone the repo to your local computer</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-git.html"><a href="introduction-to-git.html#make-a-local-change-commit-and-push"><i class="fa fa-check"></i><b>2.4</b> Make a local change, commit, and push</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-git.html"><a href="introduction-to-git.html#confirm-the-local-change-propagated-to-the-github-remote"><i class="fa fa-check"></i><b>2.5</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-git.html"><a href="introduction-to-git.html#am-i-really-going-to-type-github-username-and-password-on-each-push"><i class="fa fa-check"></i><b>2.6</b> Am I really going to type GitHub username and password on each push?</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-git.html"><a href="introduction-to-git.html#clean-up"><i class="fa fa-check"></i><b>2.7</b> Clean up</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="credential-caching.html"><a href="credential-caching.html"><i class="fa fa-check"></i><b>3</b> Cache credentials for HTTPS</a><ul>
+<li class="chapter" data-level="3.1" data-path="credential-caching.html"><a href="credential-caching.html#get-a-test-repository"><i class="fa fa-check"></i><b>3.1</b> Get a test repository</a></li>
+<li class="chapter" data-level="3.2" data-path="credential-caching.html"><a href="credential-caching.html#verify-that-your-git-is-new-enough-to-have-a-credential-helper"><i class="fa fa-check"></i><b>3.2</b> Verify that your Git is new enough to have a credential helper</a></li>
+<li class="chapter" data-level="3.3" data-path="credential-caching.html"><a href="credential-caching.html#turn-on-the-credential-helper"><i class="fa fa-check"></i><b>3.3</b> Turn on the credential helper</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="credential-caching.html"><a href="credential-caching.html#trigger-a-username-password-challenge"><i class="fa fa-check"></i><b>3.3.1</b> Trigger a username / password challenge</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ssh-keys.html"><a href="ssh-keys.html"><i class="fa fa-check"></i><b>4</b> Set up keys for SSH</a><ul>
+<li class="chapter" data-level="4.1" data-path="ssh-keys.html"><a href="ssh-keys.html#ssh-keys"><i class="fa fa-check"></i><b>4.1</b> SSH keys</a></li>
+<li class="chapter" data-level="4.2" data-path="ssh-keys.html"><a href="ssh-keys.html#check-for-existing-keys"><i class="fa fa-check"></i><b>4.2</b> Check for existing keys</a></li>
+<li class="chapter" data-level="4.3" data-path="ssh-keys.html"><a href="ssh-keys.html#set-up-from-rstudio"><i class="fa fa-check"></i><b>4.3</b> Set up from RStudio</a></li>
+<li class="chapter" data-level="4.4" data-path="ssh-keys.html"><a href="ssh-keys.html#set-up-from-the-terminal"><i class="fa fa-check"></i><b>4.4</b> Set up from the terminal</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ssh-keys.html"><a href="ssh-keys.html#create-ssh-key-pair"><i class="fa fa-check"></i><b>4.4.1</b> Create SSH key pair</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ssh-keys.html"><a href="ssh-keys.html#add-key-to-ssh-agent"><i class="fa fa-check"></i><b>4.4.2</b> Add key to ssh-agent</a></li>
+<li class="chapter" data-level="4.4.3" data-path="ssh-keys.html"><a href="ssh-keys.html#provide-public-key-to-github"><i class="fa fa-check"></i><b>4.4.3</b> Provide public key to GitHub</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html"><i class="fa fa-check"></i><b>5</b> Connect RStudio to Git and GitHub</a><ul>
+<li class="chapter" data-level="5.1" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#prerequisites"><i class="fa fa-check"></i><b>5.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="5.2" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#make-a-new-repo-on-github"><i class="fa fa-check"></i><b>5.2</b> Make a new repo on GitHub</a></li>
+<li class="chapter" data-level="5.3" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio"><i class="fa fa-check"></i><b>5.3</b> Clone the new GitHub repository to your computer via RStudio</a></li>
+<li class="chapter" data-level="5.4" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#make-local-changes-save-commit"><i class="fa fa-check"></i><b>5.4</b> Make local changes, save, commit</a></li>
+<li class="chapter" data-level="5.5" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#push-your-local-changes-online-to-github"><i class="fa fa-check"></i><b>5.5</b> Push your local changes online to GitHub</a></li>
+<li class="chapter" data-level="5.6" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#confirm-the-local-change-propagated-to-the-github-remote-1"><i class="fa fa-check"></i><b>5.6</b> Confirm the local change propagated to the GitHub remote</a></li>
+<li class="chapter" data-level="5.7" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#were-you-challenged-for-github-username-and-password"><i class="fa fa-check"></i><b>5.7</b> Were you challenged for GitHub username and password?</a></li>
+<li class="chapter" data-level="5.8" data-path="rstudio-git-github.html"><a href="rstudio-git-github.html#clean-up-1"><i class="fa fa-check"></i><b>5.8</b> Clean up</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html"><i class="fa fa-check"></i><b>6</b> Detect Git from RStudio</a><ul>
+<li class="chapter" data-level="6.1" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#do-you-have-a-problem"><i class="fa fa-check"></i><b>6.1</b> Do you have a problem?</a></li>
+<li class="chapter" data-level="6.2" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#find-git-yourself"><i class="fa fa-check"></i><b>6.2</b> Find Git yourself</a></li>
+<li class="chapter" data-level="6.3" data-path="rstudio-see-git.html"><a href="rstudio-see-git.html#tell-rstudio-where-to-find-git"><i class="fa fa-check"></i><b>6.3</b> Tell RStudio where to find Git</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R and Git combo</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rstudio-see-git" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Detect Git from RStudio</h1>
+<p>If you want RStudio to help with your Git and GitHub work, it must be able to find the Git executable.</p>
+<p>This often “just works”, so this page is aimed at people who have reason to suspect they have a problem.</p>
+<p>This is something you set up once-per-computer.</p>
+<div id="do-you-have-a-problem" class="section level2">
+<h2><span class="header-section-number">6.1</span> Do you have a problem?</h2>
+<p>Let’s check if RStudio can find the Git executable.</p>
+<ul>
+<li><em>File &gt; New Project…</em> Do you see an option to create from Version Control? If yes, good.</li>
+<li>Select <em>New Directory</em> &gt; <em>Empty Project</em>. Do you see a checkbox “Create a git repository”? If yes, good, CHECK IT.</li>
+<li>Give this disposable test project a name and click <em>Create Project</em>. Do you see a “Git” tab in the upper right pane, the same one that has “Environment” and “History”? If yes, good.</li>
+</ul>
+<p>If all looks good, you can delete this project. Looks like RStudio and Git are talking to each other.</p>
+<p>Keep reading if things don’t go so well or you want to know more.</p>
+</div>
+<div id="find-git-yourself" class="section level2">
+<h2><span class="header-section-number">6.2</span> Find Git yourself</h2>
+<p>RStudio can only act as a GUI front-end for Git if Git has been successfully installed (chapter <a href="#install-git"><strong>??</strong></a>) <strong>AND RStudio can find it</strong>.</p>
+<p>A basic test for successful installation of Git is to simply enter <code>git</code> in the shell. If you get a complaint about Git not being found, it means installation was unsuccessful or that it is not being found, i.e. it is not on your <code>PATH</code>.</p>
+<p>If you are not sure where the Git executable lives, try this in a shell:</p>
+<ul>
+<li><p><code>which git</code> (Mac, Linux)</p></li>
+<li><p><code>where git</code> (most versions of Windows)</p></li>
+</ul>
+</div>
+<div id="tell-rstudio-where-to-find-git" class="section level2">
+<h2><span class="header-section-number">6.3</span> Tell RStudio where to find Git</h2>
+<p>If Git appears to be installed and findable, launch RStudio. Quit and re-launch RStudio if there’s <strong>any doubt in your mind</strong> about whether you opened RStudio before or after installing Git. Don’t make me stop this car and restart RStudio for you in office hours. DO IT.</p>
+<p>From RStudio, go to <em>Tools &gt; Global Options &gt; Git/SVN</em> and make sure that the box <em>Git executable</em> points to … the Git executable. It should read something like:</p>
+<ul>
+<li><p><code>/usr/bin/git</code> (Mac, Linux)</p></li>
+<li><p><code>C:/Program Files (x86)/Git/bin/git.exe</code> (Windows)</p>
+<p>Here is a <a href="http://www.molecularecologist.com/wp-content/uploads/2013/11/Screenshot-2013-11-12-09.53.56-Copy1.png">screenshot</a> of someone doing this on a Windows machine.</p>
+<ul>
+<li><strong>WARNING</strong>: On Windows, do <strong>NOT</strong> use <code>C:/Program Files (x86)/Git/cmd/git.exe</code>. <code>bin</code> in the path is GOOD YES! <code>cmd</code> in the path is BAD NO!</li>
+<li><strong>WARNING</strong>: On Windows, do <strong>NOT</strong> use <code>git-bash.exe</code>. Something that ends in <code>git.exe</code> is GOOD YES! <code>git-bash.exe</code> is BAD NO!</li>
+</ul></li>
+<li><p>At times, we’ve had trouble navigating to the necessary directory on Mac OS, once we’ve clicked “Browse” and are working with a Finder-type window. The keyboard shortcut “command + shift + g” will summon “Go To Folder”, where you will be able to type or paste any path you want.</p></li>
+</ul>
+<p><strong>Restart RStudio if you make any changes.</strong> Don’t make me stop this car again and restart RStudio for you in office hours. DO IT.</p>
+<p>Do the steps at the top of the page to see if RStudio and Git are communicating now.</p>
+<p>No joy?</p>
+<ul>
+<li><p>I’ve seen this help: With your Project open, go to <code>Tools &gt; Project Options...</code>. If available, click on “Git/SVN” and select “Git” in the Version control system dropdown menu. Answer “yes” to the “Confirm New Git Repository” pop up. Answer “yes” to the “Confirm Restart RStudio” pop up.</p></li>
+<li><p>If you installed Git via GitHub for Windows, it is possible the Git executable is really well hidden. Get our help or install Git another way.</p></li>
+<li><p>Your <code>PATH</code> is probably not set up correctly and/or you should re-install Git and control/notice where it’s going. Read more in <a href="#troubleshooting"><strong>??</strong></a>.</p></li>
+<li><p>Get our help.</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rstudio-git-github.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
