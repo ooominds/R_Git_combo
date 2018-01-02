@@ -26,7 +26,7 @@ Copy the HTTPS clone URL to your clipboard via the green "Clone or Download" but
 
 In RStudio, start a new Project:
 
-  * *File > New Project > Version Control > Git*. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
+  * *File > New Project > Version Control > Git*. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this `https://github.com/trallard/myrepo.git`.
   * Be intentional about where you create this Project.
   * Suggest you "Open in new session".
   * Click "Create Project" to create a new directory, which will be all of these things:

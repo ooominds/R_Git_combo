@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="ssh-keys.html">
-<link rel="next" href="rstudio-see-git.html">
+<link rel="prev" href="existing-github-first.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -224,89 +224,74 @@ code > span. { color: #1f1c1b; } /* Normal */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rstudio-git-github" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Connect RStudio to Git and GitHub</h1>
-<p>Here we verify that RStudio can issue Git commands on your behalf. Assuming that you’ve gotten local Git to talk to GitHub, this means you’ll also be able to pull from and push to GitHub from RStudio.</p>
-<p>If you succeed here, your set up is DONE.</p>
-<div id="prerequisites" class="section level2">
-<h2><span class="header-section-number">7.1</span> Prerequisites</h2>
-<p>We assume the following:</p>
+<div id="existing-github-last" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Existing project, GitHub last</h1>
+<p>An explicit workflow for connecting an existing local R project to GitHub, when for some reason you cannot or don’t want to do a “GitHub first” workflow (see chapter <a href="existing-github-first.html#existing-github-first">10</a>).</p>
+<p>When might this come up? Maybe if it’s an existing project that is also a Git repo with a history you care about? Then you have to do this properly.</p>
+<p>This is less desirable for a novice because it involves command line Git. You can’t stay within RStudio.</p>
+<div id="make-or-verify-an-rstudio-project" class="section level2">
+<h2><span class="header-section-number">11.1</span> Make or verify an RStudio Project</h2>
+<p>We assume you’ve got your existing R project isolated in a directory on your computer.</p>
+<p>If it’s not already an RStudio Project, make it so:</p>
 <ul>
-<li>You’ve registered a free GitHub account.</li>
-<li>You’ve installed/updated R and RStudio.</li>
-<li>You’ve installed Git.</li>
-<li>You’ve introduced yourself to Git (chapter.</li>
-<li>You’ve confirmed that you can push to / pull from GitHub from the command line.</li>
+<li>Create a new RStudio project: <em>File &gt; New Project &gt; Existing Directory</em>.</li>
+<li>Yes: “Open in new session”.</li>
+</ul>
+<p>If it’s already an RStudio Project, launch it.</p>
+</div>
+<div id="make-or-verify-a-git-repo" class="section level2">
+<h2><span class="header-section-number">11.2</span> Make or verify a Git repo</h2>
+<p>You should be in RStudio now, in your project.</p>
+<p>Is it already a Git repository? The presence of the Git pane should tip you off. If yes, you’re done.</p>
+<p>If not:</p>
+<p><em>Tools &gt; Project Options … &gt; Git/SVN</em> Under Version control system, select “Git”. Confirm New Git Repository? Yes!</p>
+<p>Project should re-launch in RStudio and you should now have a Git pane.</p>
+</div>
+<div id="stage-and-commit-1" class="section level2">
+<h2><span class="header-section-number">11.3</span> Stage and commit</h2>
+<p>If your local project was already a Git repo and was up-to-date, move on. Otherwise, you probably need to stage and commit.</p>
+<ul>
+<li>Click the “Git” tab in upper right pane</li>
+<li>Check “Staged” box for all files you want to commit.
+<ul>
+<li>Default: stage it.</li>
+<li>When to reconsider: this will all go to GitHub. So do consider if that is appropriate for each file. <strong>You can absolutely keep a file locally, without committing it to the Git repo and sending to GitHub</strong>. Just let it sit there in your Git pane, without being staged. No harm will be done. If this is a long-term situation, list the file in <code>.gitignore</code>.</li>
+</ul></li>
+<li>If you’re not already in the Git pop-up, click “Commit”</li>
+<li>Type a message in “Commit message”.</li>
+<li>Click “Commit”</li>
 </ul>
 </div>
-<div id="make-a-new-repo-on-github" class="section level2">
-<h2><span class="header-section-number">7.2</span> Make a new repo on GitHub</h2>
+<div id="make-a-repo-on-github-3" class="section level2">
+<h2><span class="header-section-number">11.4</span> Make a repo on GitHub</h2>
 <p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
-<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
-<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this)<br />
-Public<br />
-YES Initialize this repository with a README</p>
-<p>Click big green button “Create repository.”</p>
+<p>Click the green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Pick a repository name – it should probably match the name of your local Project and directory. Why confuse yourself?</p>
+<p>Public or private, as appropriate and possible<br />
+DO NOT initialize this repository with a README.</p>
+<p>Click the big green button “Create repository.”</p>
 <p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. Or copy the SSH URL if you chose to set up SSH keys.</p>
 </div>
-<div id="clone-the-new-github-repository-to-your-computer-via-rstudio" class="section level2">
-<h2><span class="header-section-number">7.3</span> Clone the new GitHub repository to your computer via RStudio</h2>
-<p>In RStudio, start a new Project:</p>
+<div id="connect-to-github" class="section level2">
+<h2><span class="header-section-number">11.5</span> Connect to GitHub</h2>
+<p>Initiate the “upstream” or “tracking” relationship by adding a remote. Go to <em>Tools &gt; shell</em> and do this, substituting the HTTPS or SSH URL for <strong>your GitHub repo</strong>, according to your setup:</p>
+<pre><code>    git remote add origin https://github.com/jennybc/myrepo.git</code></pre>
 <ul>
-<li><em>File &gt; New Project &gt; Version Control &gt; Git</em>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <code>https://github.com/trallard/myrepo.git</code>.
-<ul>
-<li>Do you NOT see an option to get the Project from Version Control? Go to chapter <a href="rstudio-see-git.html#rstudio-see-git">8</a> for tips on how to help RStudio find Git.</li>
-</ul></li>
-<li>Take charge of – or at least notice! – the local directory for the Project. A common rookie mistake is to have no idea where you are saving files or what your working directory is. Pay attention. Be intentional. Personally, I would do this in <code>~/tmp</code>.</li>
-<li>I suggest you check “Open in new session”, as that’s what you’ll usually do in real life.</li>
-<li>Click “Create Project”.</li>
-</ul>
-<p>This should download the <code>README.md</code> file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the <code>README.md</code> file.</p>
-</div>
-<div id="make-local-changes-save-commit" class="section level2">
-<h2><span class="header-section-number">7.4</span> Make local changes, save, commit</h2>
-<p>From RStudio, modify the <code>README.md</code> file, e.g., by adding the line “This is a line from RStudio”. Save your changes.</p>
-<p>Commit these changes to your local repo. How?</p>
-<p>From RStudio:</p>
-<ul>
-<li>Click the “Git” tab in upper right pane.</li>
-<li>Check “Staged” box for <code>README.md</code>.</li>
-<li>If you’re not already in the Git pop-up, click “Commit”.</li>
-<li>Type a message in “Commit message”, such as “Commit from RStudio”.</li>
-<li>Click “Commit”.</li>
+<li><p>Push and cement the tracking relationship between your GitHub repository and the local repo by pushing and setting the “upstream” remote:</p>
+<pre><code>git push -u origin master</code></pre></li>
 </ul>
 </div>
-<div id="push-your-local-changes-online-to-github" class="section level2">
-<h2><span class="header-section-number">7.5</span> Push your local changes online to GitHub</h2>
-<p>Click the green “Push” button to send your local changes to GitHub. If you are challenged for username and password, provide them (but see below). You should see some message along these lines.</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">[<span class="ex">master</span> dc671f0] blah
- <span class="ex">3</span> files changed, 22 insertions(+)
- <span class="ex">create</span> mode 100644 .gitignore
- <span class="ex">create</span> mode 100644 myrepo.Rproj</code></pre></div>
-</div>
-<div id="confirm-the-local-change-propagated-to-the-github-remote-1" class="section level2">
-<h2><span class="header-section-number">7.6</span> Confirm the local change propagated to the GitHub remote</h2>
+<div id="confirm-the-local-change-propagated-to-the-github-remote-4" class="section level2">
+<h2><span class="header-section-number">11.6</span> Confirm the local change propagated to the GitHub remote</h2>
 <p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
 <p>Refresh.</p>
-<p>You should see the new “This is a line from RStudio” in the README.</p>
-<p>If you click on “commits,” you should see one with the message “Commit from RStudio”.</p>
-<p>If you have made it this far, you are DONE with set up. But first …</p>
+<p>You should see all the project files you committed there.</p>
+<p>If you click on “commits,” you should see one with the message “init”.</p>
 </div>
-<div id="were-you-challenged-for-github-username-and-password" class="section level2">
-<h2><span class="header-section-number">7.7</span> Were you challenged for GitHub username and password?</h2>
-<p>If you somehow haven’t done so yet, now is the perfect time to make sure you don’t need to keep providing username and password on each push.</p>
-<p>Pick one:</p>
-<ul>
-<li>Credential caching for HTTPS access, chapter <a href="credential-caching.html#credential-caching">5</a>.</li>
-<li>Set up SSH keys, chapter <a href="ssh-keys.html#ssh-keys">6</a>.</li>
-</ul>
-<p>Now is the perfect time to do this, since you have a functioning test repo.</p>
-</div>
-<div id="clean-up-1" class="section level2">
-<h2><span class="header-section-number">7.8</span> Clean up</h2>
-<p><strong>Local</strong> When you’re ready to clean up, you can delete the local repo any way you like. It’s just a regular directory on your computer.</p>
-<p><strong>GitHub</strong> In the browser, go to your repo’s landing page on GitHub. Click on “Settings”.</p>
-<p>Scroll down, click on “delete repository,” and do as it asks.</p>
+<div id="the-end-2" class="section level2">
+<h2><span class="header-section-number">11.7</span> The end</h2>
+<p>Now just … repeat. Do work somewhere. Commit it. Push it or pull it* depending on where you did it, but get local and remote “synced up”. Repeat.</p>
+<p>* Note that in general (and especially in future when collaborating with other developers) you will usually need to pull changes from the remote (GitHub) before pushing the local changes you have made. For this reason, it’s a good idea to try and get into the habit of pulling before you attempt to push.</p>
 
 </div>
 </div>
@@ -315,8 +300,8 @@ YES Initialize this repository with a README</p>
           </div>
         </div>
       </div>
-<a href="ssh-keys.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rstudio-see-git.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="existing-github-first.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -2,7 +2,6 @@
 
 Here we verify that RStudio can issue Git commands on your behalf. Assuming that you've gotten local Git to talk to GitHub, this means you'll also be able to pull from and push to GitHub from RStudio.
 
-In later chapters and in live workshops˜, we revisit these operations with much more explanation.
 
 If you succeed here, your set up is DONE.
 
@@ -10,11 +9,11 @@ If you succeed here, your set up is DONE.
 
 We assume the following: 
 
-  * You've registered a free GitHub account (chapter \@ref(github-acct)).
-  * You've installed/updated R and RStudio (chapter \@ref(install-r-rstudio)).
-  * You've installed Git (chapter \@ref(install-git)).
-  * You've introduced yourself to Git (chapter \@ref(hello-git)).
-  * You've confirmed that you can push to / pull from GitHub from the command line (chapter \@ref(push-pull-github)).
+  * You've registered a free GitHub account.
+  * You've installed/updated R and RStudio.
+  * You've installed Git.
+  * You've introduced yourself to Git (chapter.
+  * You've confirmed that you can push to / pull from GitHub from the command line.
 
 ## Make a new repo on GitHub
 
@@ -34,7 +33,7 @@ Copy the HTTPS clone URL to your clipboard via the green "Clone or Download" but
 
 In RStudio, start a new Project:
 
-  * *File > New Project > Version Control > Git*. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this `https://github.com/jennybc/myrepo.git`.
+  * *File > New Project > Version Control > Git*. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this `https://github.com/trallard/myrepo.git`.
     - Do you NOT see an option to get the Project from Version Control? Go to chapter \@ref(rstudio-see-git) for tips on how to help RStudio find Git.
   * Take charge of -- or at least notice! -- the local directory for the Project. A common rookie mistake is to have no idea where you are saving files or what your working directory is. Pay attention. Be intentional. Personally, I would do this in `~/tmp`.
   * I suggest you check "Open in new session", as that's what you'll usually do in real life.
