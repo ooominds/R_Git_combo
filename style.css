@@ -1,0 +1,26 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+h1{
+  color: #1B998B;
+}
+
+h2, h3, h4 {
+  color: #C5D86D;
+}
+
+a{
+  color: #0D2242;
+}
