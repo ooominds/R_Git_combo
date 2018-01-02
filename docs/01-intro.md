@@ -1,6 +1,6 @@
 # Why Git? Why GitHub? 
 
-Why would a data analyst use hosted version control?
+Why would a researcher use hosted version control?
 
 ## Why Git?
 

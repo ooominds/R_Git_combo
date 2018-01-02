@@ -6,11 +6,11 @@ site: bookdown::bookdown_site
 description: "Winning R and Git combo!"
 output:
   bookdown::gitbook: 
-    highlight: pygments
+    highlight: kate
 documentclass: book"
 ---
 
-# RSE Induction: R and Git combo
+# RSE Induction: R and Git combo {-}
 
 <img src="images/git_confuse.jpg" width="669" height="400" alt="Cover image" />  
 
