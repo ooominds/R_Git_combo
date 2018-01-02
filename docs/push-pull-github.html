@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="install-git.html">
+<link rel="prev" href="introduction-to-git.html">
+<link rel="next" href="credential-caching.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -190,105 +190,134 @@ code > span. { color: #1f1c1b; } /* Normal */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="why-git-why-github" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Why Git? Why GitHub?</h1>
-<p>Why would a researcher use hosted version control?</p>
-<div id="why-git" class="section level2">
-<h2><span class="header-section-number">1.1</span> Why Git?</h2>
-<p><a href="http://git-scm.com">Git</a> is a <strong>version control system</strong>. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a <strong>repository</strong> – in a sane, highly structured way. If you have no idea what I’m talking about, think of it as the “Track Changes” features from Microsoft Word on steroids.</p>
-<p>Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.</p>
-<p>A solo data analyst, working on a single computer, will benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of your files, if that’s all you’re worried about.</p>
-<p>In my opinion, <strong>for new users</strong>, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people. Who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread or neglect.</p>
+<div id="push-pull-github" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Connect to GitHub</h1>
+<p>Objective: make sure that you can pull from and push to GitHub from your computer.</p>
+<p>I do not explain all terminal and Git commands in detail. This is a black box diagnostic / configuration exercise. In later chapters and in live workshops, we revisit these operations with much more narrative.</p>
+<div id="make-a-repo-on-github" class="section level2">
+<h2><span class="header-section-number">4.1</span> Make a repo on GitHub</h2>
+<p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
+<p>Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.</p>
+<p>Repository name: <code>myrepo</code> (or whatever you wish, we will delete this)<br />
+Public<br />
+YES Initialize this repository with a README</p>
+<p>Click big green button “Create repository.”</p>
+<p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.</p>
 </div>
-<div id="why-github" class="section level2">
-<h2><span class="header-section-number">1.2</span> Why GitHub?</h2>
-<p>This is where hosting services like <a href="https://github.com">GitHub</a>, <a href="https://bitbucket.org">Bitbucket</a>, and <a href="https://about.gitlab.com">GitLab</a> come in. They provide a home for your Git-based projects on the internet. If you have no idea what I’m talking about, think of it as DropBox but much, much better. The remote host acts as a distribution channel or clearinghouse for your Git-managed project. It allows other people to see your stuff, sync up with you, and perhaps even make changes. These hosting providers improve upon traditional Unix Git servers with well-designed web-based interfaces.</p>
-<p>Even for private solo projects, it’s a good idea to push your work to a remote location for peace of mind. Why? Because it’s fairly easy to screw up your local Git repository, especially when you’re new at this. The good news is that often only the Git infrastructure is borked up. Your files are just fine! Which makes your Git pickle all the more frustrating. There are official Git solutions to these problems, but they might require expertise and patience you can’t access at 3a.m. If you’ve recently pushed your work to GitHub, it’s easy to grab a fresh copy, patch things up with the changes that only exist locally, and get on with your life.</p>
-<p>We target <a href="https://github.com">GitHub</a> – not <a href="https://bitbucket.org">Bitbucket</a> or <a href="https://about.gitlab.com">GitLab</a> – for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms.</p>
-<p>Don’t get too caught up on public versus private at this point. There are many ways to get private repositories from the major providers for low or no cost. Just get started and figure out if and how Git/GitHub is going to work for you! If you outgrow this arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service or self-host one of these platforms.</p>
+<div id="clone-the-repo-to-your-local-computer" class="section level2">
+<h2><span class="header-section-number">4.2</span> Clone the repo to your local computer</h2>
+<p>From Rstudio open a terminal instance.</p>
+<p>Take charge of – or at least notice! – what directory you’re in. <code>pwd</code> to display working directory. <code>cd</code> to move around. Personally, I would do this sort of thing in <code>~/tmp</code>.</p>
+<p>Clone <code>myrepo</code> from GitHub to your computer. This URL should have <strong>your GitHub username</strong> and the name of <strong>your practice repo</strong>. If your terminal cooperates, you should be able to paste the whole <code>https://....</code> bit that we copied above. But some shells are not (immediately) clipboard aware. In that sad case, you must type it. <strong>Accurately.</strong></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</code></pre></div>
+<p>This should look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tania@Mictlan</span> tmp $ git clone https://github.com/trallard/myrepo.git
+<span class="ex">Cloning</span> into <span class="st">&#39;myrepo&#39;</span>...
+<span class="ex">remote</span>: Counting objects: 3, done.
+<span class="ex">remote</span>: Total 3 (delta 0), <span class="ex">reused</span> 0 (delta 0), <span class="ex">pack-reused</span> 0
+<span class="ex">Unpacking</span> objects: 100% (3/3), <span class="kw">done</span><span class="ex">.</span>
+<span class="ex">Checking</span> connectivity... done.</code></pre></div>
+<p>Make this new repo your working directory, list its files, display the README, and get some information on its connection to GitHub:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> myrepo
+<span class="fu">ls</span>
+<span class="fu">head</span> README.md
+<span class="fu">git</span> remote show origin</code></pre></div>
+<p>This should look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tania@Mictlan</span>~ $ cd myrepo
+
+<span class="ex">tania@Mictlan</span> myrepo $ ls
+<span class="ex">README.md</span>
+
+<span class="ex">tania@Mictlan</span> myrepo $ head README.md 
+<span class="co"># myrepo</span>
+<span class="ex">tutorial</span> development
+
+<span class="ex">tania@Mictlan</span> myrepo $ git remote show origin
+<span class="ex">*</span> remote origin
+  <span class="ex">Fetch</span> URL: https://github.com/trallard/myrepo.git
+  <span class="ex">Push</span>  URL: https://github.com/trallard/myrepo.git
+  <span class="ex">HEAD</span> branch: master
+  <span class="ex">Remote</span> branch:
+    <span class="ex">master</span> tracked
+  <span class="ex">Local</span> branch configured for <span class="st">&#39;git pull&#39;</span>:
+    <span class="ex">master</span> merges with remote master
+  <span class="ex">Local</span> ref configured for <span class="st">&#39;git push&#39;</span>:
+    <span class="ex">master</span> pushes to master (up to date)</code></pre></div>
 </div>
-<div id="is-it-going-to-hurt" class="section level2">
-<h2><span class="header-section-number">1.3</span> Is it going to hurt?</h2>
-<p>Yes.</p>
-<p>You have to install Git, get local Git talking to GitHub, and make sure RStudio can talk to local Git (and, therefore, GitHub). This is one-time or once-per-computer pain.</p>
-<p>For new or existing projects, you will:</p>
+<div id="make-a-local-change-commit-and-push" class="section level2">
+<h2><span class="header-section-number">4.3</span> Make a local change, commit, and push</h2>
+<p>Add a line to README and verify that Git notices the change:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;A line I wrote on my local computer&quot;</span> <span class="op">&gt;&gt;</span> README.md
+<span class="fu">git</span> status</code></pre></div>
+<p>This should look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tania@Mictlan</span> myrepo $ echo <span class="st">&quot;A line I wrote on my local computer&quot;</span> <span class="op">&gt;&gt;</span> README.md
+<span class="ex">tania@Mictlan</span> myrepo $ git status
+<span class="ex">On</span> branch master
+<span class="ex">Your</span> branch is up-to-date with <span class="st">&#39;origin/master&#39;</span>.
+<span class="ex">Changes</span> not staged for commit:
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="kw">)</span>
+  <span class="kw">(</span><span class="ex">use</span> <span class="st">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="kw">)</span>
+
+    <span class="ex">modified</span>:   README.md
+
+<span class="ex">no</span> changes added to commit (use <span class="st">&quot;git add&quot;</span> and/or <span class="st">&quot;git commit -a&quot;</span>)</code></pre></div>
+<p>Commit this change and push to your remote repo on GitHub. If you’re a new GitHub user, you will be challenged for your GitHub username and password. Provide them!</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add -A
+<span class="fu">git</span> commit -m <span class="st">&quot;A commit from my local computer&quot;</span>
+<span class="fu">git</span> push</code></pre></div>
+<p>The <code>-m</code> flag is an important message that must be included with every commit! Git requires a commit message for every commit, so if you forget the <code>-m</code> flag, git will prompt you for a commit message anyways. It is good practice to write meaningful commit messages so in the future, potential collaborators (and your future self) will understand the progression of a project.</p>
+<p>This should look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">tania@Mictlan</span> myrepo $ git add -A
+
+<span class="ex">tania@Mictlan</span> myrepo $ git commit -m <span class="st">&quot;A commit from my local computer&quot;</span>
+[<span class="ex">master</span> de669ba] A commit from my local computer
+ <span class="ex">1</span> file changed, 1 insertion(+)
+ 
+<span class="ex">tania@Mictlan</span> myrepo $ git push
+<span class="ex">Counting</span> objects: 3, done.
+<span class="ex">Delta</span> compression using up to 8 threads.
+<span class="ex">Compressing</span> objects: 100% (2/2), <span class="kw">done</span><span class="ex">.</span>
+<span class="ex">Writing</span> objects: 100% (3/3), <span class="ex">311</span> bytes <span class="kw">|</span> <span class="ex">0</span> bytes/s, done.
+<span class="ex">Total</span> 3 (delta 0), <span class="ex">reused</span> 0 (delta 0)
+<span class="ex">To</span> https://github.com/trallard/myrepo.git
+   <span class="ex">b4112c5..de669ba</span>  master -<span class="op">&gt;</span> master</code></pre></div>
+</div>
+<div id="confirm-the-local-change-propagated-to-the-github-remote" class="section level2">
+<h2><span class="header-section-number">4.4</span> Confirm the local change propagated to the GitHub remote</h2>
+<p>Go back to the browser. I assume we’re still viewing your new GitHub repo.</p>
+<p>Refresh.</p>
+<p>You should see the new “A line I wrote on my local computer” in the README.</p>
+<p>If you click on “commits,” you should see one with the message “A commit from my local computer.”</p>
+<p>If you have made it this far, you are ready to graduate to using Git and GitHub with RStudio (chapter <a href="rstudio-git-github.html#rstudio-git-github">7</a>). But first …</p>
+</div>
+<div id="am-i-really-going-to-type-github-username-and-password-on-each-push" class="section level2">
+<h2><span class="header-section-number">4.5</span> Am I really going to type GitHub username and password on each push?</h2>
+<p>It is likely that your first push, above, leads to a challenge for your GitHub username and password.</p>
+<p>This will drive you crazy in the long-run and make you reluctant to push. Do one of the following to eliminate this annoyance:</p>
 <ul>
-<li>Dedicate a directory (a.k.a “folder”) to it.</li>
-<li>Make it an RStudio Project.</li>
-<li>Make it a Git repository.</li>
-<li>Go about your usual business. But instead of only <em>saving</em> individual files, periodically you make a <strong>commit</strong>, which takes a multi-file snapshot of the entire project.
-<ul>
-<li>Have you ever versioned a file <a href="http://www.phdcomics.com/comics/archive.php?comicid=1531">by adding your initials or the date</a>? That is effectively a <strong>commit</strong>, albeit only for a single file: it is a version that is significant to you and that you might want to inspect or revert to later.</li>
-</ul></li>
-<li>Push commits to GitHub periodically.
-<ul>
-<li>This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you’re ready to make your work visible to others and invite comment or edits.</li>
-</ul></li>
+<li>Credential caching for HTTPS access, chapter <a href="credential-caching.html#credential-caching">5</a>.</li>
+<li>Set up SSH keys, chapter <a href="ssh-keys.html#ssh-keys">6</a>.</li>
 </ul>
-<p>This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. The rest of this site is dedicated to walking you through the necessary setup and creating your first few Git projects. We conclude with prompts that guide you through some of the more advanced usage that makes all of this initial pain worthwhile.</p>
+<p>Now is the perfect time to do this, since you have a functioning test repo.</p>
 </div>
-<div id="what-is-the-payoff" class="section level2">
-<h2><span class="header-section-number">1.4</span> What is the payoff?</h2>
-<p><strong>Exposure</strong>: If someone needs to see your work or if you want them to try out your code, they can easily get it from GitHub. If they use Git, they can clone or fork your repository. If they don’t use Git, they can still browse your project on GitHub like a normal website and even grab everything by downloading a zip archive.</p>
-<p><strong>Be a keener!</strong> If you care deeply about someone else’s project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.</p>
-<p><strong>Collaboration</strong>: If you need to collaborate on data analysis or code development, then everyone should use Git. Use GitHub as your clearinghouse: individuals work independently, then send work back to GitHub for reconciliation and transmission to the rest of the team. The advantage of Git/GitHub is highlighted by comparing these two ways of collaborating on a document:</p>
-<ul>
-<li><strong>Edit, save, attach.</strong> In this workflow, everyone has one (or more!) copies of the document and they circulate via email attachment. Which one is “master”? Is it even possible to say? How do different versions relate to each other? How should versions be reconciled? If you want to see the current best version, how do you get it? All of this usually gets sorted out by social contract and a fairly manual process.</li>
-<li><strong>Google Doc.</strong> In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who’s been editing the document and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.</li>
-</ul>
-<p>Managing a project via Git/GitHub is much more like the Google Doc scenario and enjoys many of the same advantages. It is definitely more complicated than collaborating on a Google Doc, but this puts you in the right mindset.</p>
-</div>
-<div id="who-can-do-what" class="section level2">
-<h2><span class="header-section-number">1.5</span> Who can do what?</h2>
-<p>A public repository is readable by the world. The owner can grant higher levels of permission to others, such as the ability to push commits.</p>
-<p>A private repository is invisible to the world. The owner can grant read, write (push), or admin access to others.</p>
-<p>There is also a formal notion of an organization, which can be useful for managing repository permissions for entire teams of people.</p>
-</div>
-<div id="special-features-of-github" class="section level2">
-<h2><span class="header-section-number">1.6</span> Special features of GitHub</h2>
-<p><em>this is perhaps too detailed … full stop? or does it belong elsewhere?</em></p>
-<p>In addition to a well-designed user interface, GitHub offers two especially important features:</p>
-<ul>
-<li><strong>Issues.</strong> Remember how we’re high-jacking software development tools? Well, this is the bug tracker. It’s a list of things … bugs, feature requests, to dos, whatever.
-<ul>
-<li>Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.</li>
-<li>Issues can be assigned to people (e.g., to dos) and tagged (“bug” or “progress-report”).</li>
-<li>Issues are tightly integrated with commits and therefore allow you to record <em>that the changes in this commit solve that problem which was discussed in that issue</em>.</li>
-<li>As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.</li>
-</ul></li>
-<li><strong>Pull requests.</strong> Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: “Here are some changes I would like to make.” It might be linked to a specific issue: “Related to #14.” or “Fixes #56”. GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.</li>
-</ul>
-</div>
-<div id="whats-special-about-using-r-with-git-and-github" class="section level2">
-<h2><span class="header-section-number">1.7</span> What’s special about using R with Git and GitHub?</h2>
-<ul>
-<li>The active R package development community on GitHub. Read about R-specific GitHub resources and searching <a href="#search">here</a>.</li>
-<li>Specific workflows make it rewarding to share source code, rendered reports, and entire projects. Read more about <a href="#rmd-test-drive">R Markdown</a>, <a href="#r-test-drive">R scripts</a>, and <a href="#repo-browsability">R-heavy projects</a>.</li>
-<li>Git- and GitHub-related features of the <a href="https://www.rstudio.com/products/rstudio-desktop/">RStudio IDE</a>. This is covered throughout.</li>
-</ul>
-</div>
-<div id="audience-and-pre-reqs" class="section level2">
-<h2><span class="header-section-number">1.8</span> Audience and pre-reqs</h2>
-<p>The target audience for this site is someone who analyzes data, probably with R, though some of the content may be useful to analysts using other languages. R package development with Git(Hub) is absolutely in scope, but it is not an explicit focus or requirement.</p>
-<p>The site is aimed at intermediate to advanced R users, who are comfortable writing R scripts and managing R projects. You should have a good grasp of files and directories and be generally knowledgeable about where things live on your computer.</p>
-<p>Although we will show alternatives for most Git operations, we will inevitably spend some time in the shell and we assume some prior experience. For example, you should know how to open up a shell, navigate to a certain directory, and list the files there. You should be comfortable using shell commands to view/move/rename files and to work with your command history.</p>
-</div>
-<div id="what-this-is-not" class="section level2">
-<h2><span class="header-section-number">1.9</span> What this is NOT</h2>
-<p>We aim to teach novices about Git on a strict “need to know” basis. Git was built to manage development of the Linux kernel, which is probably very different from what you do. Most people need a small subset of Git’s functionality and that will be our focus. If you want a full-blown exposition of Git as a directed acyclic graph or a treatise on the Git-Flow branching strategy, you will be sad.</p>
+<div id="clean-up" class="section level2">
+<h2><span class="header-section-number">4.6</span> Clean up</h2>
+<p><strong>Local</strong> When you’re ready to clean up, you can delete the local repo any way you like. It’s just a regular directory on your computer.</p>
+<p>Here’s how to do that in the shell, if current working directory is <code>myrepo</code>:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
+<span class="fu">rm</span> -rf myrepo/</code></pre></div>
+<p><strong>GitHub</strong> In the browser, go to your repo’s landing page on GitHub. Click on “Settings”.</p>
+<p>Scroll down, click on “delete repository,” and do as it asks.</p>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="install-git.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-git.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="credential-caching.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

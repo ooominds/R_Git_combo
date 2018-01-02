@@ -1,6 +1,6 @@
 # (PART) Installation {-} 
 
-# Installation
+# Installation {#install-git}
 
 Getting all the necessary software installed, configured, and playing nicely together is honestly half the battle here. Brace yourself for some pain. The upside is that you can give yourself a pat on the back once you get through this. And you WILL get through this.
 

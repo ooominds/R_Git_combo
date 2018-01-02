@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="install-git.html">
+<link rel="prev" href="why-git-why-github.html">
+<link rel="next" href="introduction-to-git.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -190,105 +190,131 @@ code > span. { color: #1f1c1b; } /* Normal */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="why-git-why-github" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Why Git? Why GitHub?</h1>
-<p>Why would a researcher use hosted version control?</p>
-<div id="why-git" class="section level2">
-<h2><span class="header-section-number">1.1</span> Why Git?</h2>
-<p><a href="http://git-scm.com">Git</a> is a <strong>version control system</strong>. Its original purpose was to help groups of developers work collaboratively on big software projects. Git manages the evolution of a set of files – called a <strong>repository</strong> – in a sane, highly structured way. If you have no idea what I’m talking about, think of it as the “Track Changes” features from Microsoft Word on steroids.</p>
-<p>Git has been re-purposed by the data science community. In addition to using it for source code, we use it to manage the motley collection of files that make up typical data analytical projects, which often consist of data, figures, reports, and, yes, source code.</p>
-<p>A solo data analyst, working on a single computer, will benefit from adopting version control. But not nearly enough to justify the pain of installation and workflow upheaval. There are much easier ways to get versioned back ups of your files, if that’s all you’re worried about.</p>
-<p>In my opinion, <strong>for new users</strong>, the pros of Git only outweigh the cons when you factor in the overhead of communicating and collaborating with other people. Who among us does not need to do that? Your life is much easier if this is baked into your workflow, as opposed to being a separate process that you dread or neglect.</p>
-</div>
-<div id="why-github" class="section level2">
-<h2><span class="header-section-number">1.2</span> Why GitHub?</h2>
-<p>This is where hosting services like <a href="https://github.com">GitHub</a>, <a href="https://bitbucket.org">Bitbucket</a>, and <a href="https://about.gitlab.com">GitLab</a> come in. They provide a home for your Git-based projects on the internet. If you have no idea what I’m talking about, think of it as DropBox but much, much better. The remote host acts as a distribution channel or clearinghouse for your Git-managed project. It allows other people to see your stuff, sync up with you, and perhaps even make changes. These hosting providers improve upon traditional Unix Git servers with well-designed web-based interfaces.</p>
-<p>Even for private solo projects, it’s a good idea to push your work to a remote location for peace of mind. Why? Because it’s fairly easy to screw up your local Git repository, especially when you’re new at this. The good news is that often only the Git infrastructure is borked up. Your files are just fine! Which makes your Git pickle all the more frustrating. There are official Git solutions to these problems, but they might require expertise and patience you can’t access at 3a.m. If you’ve recently pushed your work to GitHub, it’s easy to grab a fresh copy, patch things up with the changes that only exist locally, and get on with your life.</p>
-<p>We target <a href="https://github.com">GitHub</a> – not <a href="https://bitbucket.org">Bitbucket</a> or <a href="https://about.gitlab.com">GitLab</a> – for the sake of specificity. However, all the big-picture principles and even some mechanics will carry over to these alternative hosting platforms.</p>
-<p>Don’t get too caught up on public versus private at this point. There are many ways to get private repositories from the major providers for low or no cost. Just get started and figure out if and how Git/GitHub is going to work for you! If you outgrow this arrangement, you can throw some combination of technical savvy and money at the problem. You can either pay for a higher level of service or self-host one of these platforms.</p>
-</div>
-<div id="is-it-going-to-hurt" class="section level2">
-<h2><span class="header-section-number">1.3</span> Is it going to hurt?</h2>
-<p>Yes.</p>
-<p>You have to install Git, get local Git talking to GitHub, and make sure RStudio can talk to local Git (and, therefore, GitHub). This is one-time or once-per-computer pain.</p>
-<p>For new or existing projects, you will:</p>
+<div id="install-git" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Installation</h1>
+<p>Getting all the necessary software installed, configured, and playing nicely together is honestly half the battle here. Brace yourself for some pain. The upside is that you can give yourself a pat on the back once you get through this. And you WILL get through this.</p>
+<p>You will find far more resources for how to <em>use Git</em> than for installation and configuration. Why? The experts …</p>
 <ul>
-<li>Dedicate a directory (a.k.a “folder”) to it.</li>
-<li>Make it an RStudio Project.</li>
-<li>Make it a Git repository.</li>
-<li>Go about your usual business. But instead of only <em>saving</em> individual files, periodically you make a <strong>commit</strong>, which takes a multi-file snapshot of the entire project.
+<li>Have been doing this for years. It’s simply not hard for them anymore.</li>
+<li>Probably use some flavor of Unix. They may secretly (or not so secretly) take pride in neither using nor knowing Windows.</li>
+<li>Get more satisfaction and reward for thinking and writing about Git concepts and workflows than Git installation.</li>
+</ul>
+<div id="github-account" class="section level2">
+<h2><span class="header-section-number">2.1</span> GitHub account</h2>
+<p>The first thing you need to do is to register for an account with GitHub. It’s free!</p>
 <ul>
-<li>Have you ever versioned a file <a href="http://www.phdcomics.com/comics/archive.php?comicid=1531">by adding your initials or the date</a>? That is effectively a <strong>commit</strong>, albeit only for a single file: it is a version that is significant to you and that you might want to inspect or revert to later.</li>
+<li><a href="https://github.com" class="uri">https://github.com</a></li>
+</ul>
+</div>
+<div id="username-advice" class="section level2">
+<h2><span class="header-section-number">2.2</span> Username advice</h2>
+<p>You will be able upgrade to a paid level of service, apply discounts, join organizations, etc. in the future, so don’t fret about any of that now. <strong>Except your username. You might want to give that some thought.</strong></p>
+<p>A few tips, which sadly tend to contradict each other:</p>
+<ul>
+<li>Incorporate your actual name! People like to know who they’re dealing with. Also makes your username easier for people to guess or remember.</li>
+<li>Reuse your username from other contexts, e.g., Twitter or Slack. But, of course, someone with no GitHub activity will probably be squatting on that.</li>
+<li>Pick a username you will be comfortable revealing to your future boss.</li>
+<li>Shorter is better than longer.</li>
+<li>Be as unique as possible in as few characters as possible. In some settings GitHub auto-completes or suggests usernames.</li>
+<li>Make it timeless. Don’t highlight your current university, employer, or place of residence.</li>
+<li>Avoid words laden with special meaning in programming. In my first inept efforts to script around the GitHub API, I assigned lots of issues to <a href="https://github.com/na">the guy with username <code>NA</code></a> because my vector of GitHub usernames contained missing values. A variant of <a href="https://xkcd.com/327/">Little Bobby Tables</a>.</li>
+</ul>
+<p>You can change your username later, but better to get this right the first time.</p>
+<ul>
+<li><a href="https://help.github.com/articles/changing-your-github-username/" class="uri">https://help.github.com/articles/changing-your-github-username/</a></li>
+<li><a href="https://help.github.com/articles/what-happens-when-i-change-my-username/" class="uri">https://help.github.com/articles/what-happens-when-i-change-my-username/</a></li>
+</ul>
+</div>
+<div id="r-and-rstudio" class="section level2">
+<h2><span class="header-section-number">2.3</span> R and Rstudio</h2>
+<p>Install pre-compiled binary of R for your OS: <a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a></p>
+<p>Install Preview version RStudio Desktop: <a href="https://www.rstudio.com/products/rstudio/download/preview/" class="uri">https://www.rstudio.com/products/rstudio/download/preview/</a></p>
+<p>Update your R packages: <code>update.packages(ask = FALSE, checkBuilt = TRUE)</code></p>
+<p>Read on for more detail or hand-holding.</p>
+<div id="more-about-r-and-rstudio" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> More about R and RStudio</h3>
+<p><strong>Get current, people.</strong> You don’t want to adopt new things on day one. But at some point, running old versions of software adds unnecessary difficulty.</p>
+<p>In live workshops, there is a limit to how much we can help with ancient versions of R or RStudio. Also, frankly, there is a limit to our motivation. By definition, these problems are going away and we’d rather focus on edge cases with current versions, which affect lots of people.</p>
+</div>
+</div>
+<div id="git" class="section level2">
+<h2><span class="header-section-number">2.4</span> Git</h2>
+<p>You need Git, so you can use it at the command line and so RStudio can call it.</p>
+<p>If there’s any chance it’s installed already, verify that, rejoice, and skip this step.</p>
+<p>Otherwise, find installation instructions below for your operating system.</p>
+<div id="git-already-installed" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Git already installed?</h3>
+<p>From your shell command (terminal) Enter <code>which git</code> to request the path to your Git executable:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">which</span> git
+<span class="co">## /usr/bin/git</span></code></pre></div>
+<p>and <code>git --version</code> to see its version:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> --version
+<span class="co">## git version 2.14.3 (Apple Git-98)</span></code></pre></div>
+<p>If you are successful, that’s great! You have Git already. No need to install! Move on.</p>
+<p>If, instead, you see something more like <code>git: command not found</code>, keep reading.</p>
+<p>Mac OS users might get an immediate offer to install command line developer tools. Yes, you should accept! Click “Install” and read more below.</p>
+</div>
+<div id="windows" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Windows</h3>
+<p><strong>Option 1</strong> (<em>recommended</em>): Install <a href="https://git-for-windows.github.io/">Git for Windows</a>, previously known as <code>msysgit</code> or “Git Bash”, to get Git in addition to some other useful tools, such as the Bash shell. Yes, all those names are totally confusing. You must select the “Use Git from the Windows Command Prompt” option during installation. You may accept all of the other default settings during installation.</p>
+<ul>
+<li>This approach leaves the Git executable in a conventional location, which will help you and other programs, e.g. RStudio, find it and use it. This also supports a transition to more expert use, because the Bash shell will be useful as you venture outside of R/RStudio.</li>
+<li>This also leaves you with a Git client, though not a very good one.</li>
+<li>RStudio for windows likes for git to be in the Files(x86) folder. If not in this location, RStudio may not detect it, and may cause headaches for you later.</li>
+</ul>
+<p><strong>Option 2</strong> (<em>NOT recommended</em>): The GitHub hosting site offers <a href="https://desktop.github.com/">GitHub Desktop for Windows</a> that provides Git itself, a client, and smooth integration with GitHub.</p>
+<ul>
+<li><a href="https://help.github.com/articles/set-up-git#platform-windows">Their Windows set-up instructions</a> recommend this method of Git installation.</li>
+<li>Why don’t we like it? We’ve seen GitHub Desktop for Windows lead to Git installation in suboptimal locations, such as <code>~/AppData/Local</code>, and in other places we could never find. If you were <strong>only</strong> going to interact with GitHub via this app, maybe that’s OK, but that does not apply to you. Therefore, we recommend option 1 instead.</li>
+</ul>
+</div>
+<div id="mac-os" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Mac OS</h3>
+<p><strong>Option 1</strong> (<em>highly recommended</em>): Install the Xcode command line tools (not all of Xcode), which includes Git. If your OS is older than 10.11 El Capitan, it is possible that you <strong>must</strong> install the Xcode command line tools in order for RStudio to find and use Git.</p>
+<p>Go to the shell and enter one of these commands to elicit an offer to install developer command line tools:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> --version
+<span class="fu">git</span> config</code></pre></div>
+<p>Accept the offer! Click on “Install”.</p>
+<p>Here’s another way to request this installation, more directly:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">xcode-select</span> --install</code></pre></div>
+<p>We just happen to find this Git-based trigger apropos.</p>
+<p>Note also that, after upgrading your Mac OS, you might need to re-do the above and/or re-agree to the Xcode license agreement. We have seen this cause the RStudio Git pane to disappear on a system where it was previously working. Use commands like those above to tickle Xcode into prompting you for what it needs, then restart RStudio.</p>
+<p><strong>Option 2</strong> (<em>recommended</em>): Install Git from here: <a href="http://git-scm.com/downloads" class="uri">http://git-scm.com/downloads</a>.</p>
+<ul>
+<li>This arguably sets you up the best for the future. It will certainly get you the latest version of Git of all approaches described here.</li>
+<li>The GitHub home for this project is here: <a href="https://github.com/timcharper/git_osx_installer" class="uri">https://github.com/timcharper/git_osx_installer</a>.
+<ul>
+<li>At that link, there is a list of maintained builds for various combinations of Git and Mac OS version. If you’re running 10.7 Lion and struggling, we’ve had success in September 2015 with binaries found here: <a href="https://www.wandisco.com/git/download" class="uri">https://www.wandisco.com/git/download</a>.</li>
 </ul></li>
-<li>Push commits to GitHub periodically.
-<ul>
-<li>This is like sharing a document with colleagues on DropBox or sending it out as an email attachment. It signals you’re ready to make your work visible to others and invite comment or edits.</li>
-</ul></li>
 </ul>
-<p>This is a change to your normal, daily workflow. It feels weird at first but quickly becomes second nature. The rest of this site is dedicated to walking you through the necessary setup and creating your first few Git projects. We conclude with prompts that guide you through some of the more advanced usage that makes all of this initial pain worthwhile.</p>
-</div>
-<div id="what-is-the-payoff" class="section level2">
-<h2><span class="header-section-number">1.4</span> What is the payoff?</h2>
-<p><strong>Exposure</strong>: If someone needs to see your work or if you want them to try out your code, they can easily get it from GitHub. If they use Git, they can clone or fork your repository. If they don’t use Git, they can still browse your project on GitHub like a normal website and even grab everything by downloading a zip archive.</p>
-<p><strong>Be a keener!</strong> If you care deeply about someone else’s project, such as an R package you use heavily, you can track its development on GitHub. You can watch the repository to get notified of major activity. You can fork it to keep your own copy. You can modify your fork to add features or fix bugs and send them back to the owner as a proposed change.</p>
-<p><strong>Collaboration</strong>: If you need to collaborate on data analysis or code development, then everyone should use Git. Use GitHub as your clearinghouse: individuals work independently, then send work back to GitHub for reconciliation and transmission to the rest of the team. The advantage of Git/GitHub is highlighted by comparing these two ways of collaborating on a document:</p>
+<p><strong>Option 3</strong> (<em>recommended</em>): If you anticipate getting heavily into scientific computing, you’re going to be installing and updating lots of software. You should check out <a href="http://brew.sh">homebrew</a>, “the missing package manager for OS X”. Among many other things, it can install Git for you. Once you have Homebrew installed, do this in the shell:</p>
+<pre><code>brew install git</code></pre>
+<p><strong>Option 4</strong> (<em>NOT recommended</em>): The GitHub hosting site offers <a href="https://desktop.github.com/">GitHub Desktop for Mac</a> that provides <em>the option</em> to install Git itself, a client, and smooth integration with GitHub..</p>
 <ul>
-<li><strong>Edit, save, attach.</strong> In this workflow, everyone has one (or more!) copies of the document and they circulate via email attachment. Which one is “master”? Is it even possible to say? How do different versions relate to each other? How should versions be reconciled? If you want to see the current best version, how do you get it? All of this usually gets sorted out by social contract and a fairly manual process.</li>
-<li><strong>Google Doc.</strong> In this workflow, there is only one copy of the document and it lives in the cloud. Anyone can access the most recent version on demand. Anyone can edit or comment or propose a change and this is immediately available to everyone else. Anyone can see who’s been editing the document and, if disaster strikes, can revert to a previous version. A great deal of ambiguity and annoying reconciliation work has been designed away.</li>
-</ul>
-<p>Managing a project via Git/GitHub is much more like the Google Doc scenario and enjoys many of the same advantages. It is definitely more complicated than collaborating on a Google Doc, but this puts you in the right mindset.</p>
-</div>
-<div id="who-can-do-what" class="section level2">
-<h2><span class="header-section-number">1.5</span> Who can do what?</h2>
-<p>A public repository is readable by the world. The owner can grant higher levels of permission to others, such as the ability to push commits.</p>
-<p>A private repository is invisible to the world. The owner can grant read, write (push), or admin access to others.</p>
-<p>There is also a formal notion of an organization, which can be useful for managing repository permissions for entire teams of people.</p>
-</div>
-<div id="special-features-of-github" class="section level2">
-<h2><span class="header-section-number">1.6</span> Special features of GitHub</h2>
-<p><em>this is perhaps too detailed … full stop? or does it belong elsewhere?</em></p>
-<p>In addition to a well-designed user interface, GitHub offers two especially important features:</p>
-<ul>
-<li><strong>Issues.</strong> Remember how we’re high-jacking software development tools? Well, this is the bug tracker. It’s a list of things … bugs, feature requests, to dos, whatever.
-<ul>
-<li>Issues are tightly integrated with email and therefore allow you to copy/embed important conversations in the associated repo.</li>
-<li>Issues can be assigned to people (e.g., to dos) and tagged (“bug” or “progress-report”).</li>
-<li>Issues are tightly integrated with commits and therefore allow you to record <em>that the changes in this commit solve that problem which was discussed in that issue</em>.</li>
-<li>As a new user of GitHub, one of the most productive things you can do is to use GitHub issues to provide a clear bug report or feature request for a package you use.</li>
-</ul></li>
-<li><strong>Pull requests.</strong> Git allows a project to have multiple, independent branches of development, with the notion that some should eventually be merged back into the main development branch. These are technical Git terms but hopefully also make sense on their own. A pull request is a formal proposal that says: “Here are some changes I would like to make.” It might be linked to a specific issue: “Related to #14.” or “Fixes #56”. GitHub facilitates and preserves the discussion of the proposal, holistically and line-by-line.</li>
+<li><a href="https://help.github.com/articles/set-up-git#platform-mac">Their Mac set-up instructions</a> recommend this method of Git installation.</li>
+<li>We don’t like GitHub Desktop as a Git client, so this is a very cumbersome way to install Git. Consider this option a last resort.</li>
 </ul>
 </div>
-<div id="whats-special-about-using-r-with-git-and-github" class="section level2">
-<h2><span class="header-section-number">1.7</span> What’s special about using R with Git and GitHub?</h2>
-<ul>
-<li>The active R package development community on GitHub. Read about R-specific GitHub resources and searching <a href="#search">here</a>.</li>
-<li>Specific workflows make it rewarding to share source code, rendered reports, and entire projects. Read more about <a href="#rmd-test-drive">R Markdown</a>, <a href="#r-test-drive">R scripts</a>, and <a href="#repo-browsability">R-heavy projects</a>.</li>
-<li>Git- and GitHub-related features of the <a href="https://www.rstudio.com/products/rstudio-desktop/">RStudio IDE</a>. This is covered throughout.</li>
-</ul>
-</div>
-<div id="audience-and-pre-reqs" class="section level2">
-<h2><span class="header-section-number">1.8</span> Audience and pre-reqs</h2>
-<p>The target audience for this site is someone who analyzes data, probably with R, though some of the content may be useful to analysts using other languages. R package development with Git(Hub) is absolutely in scope, but it is not an explicit focus or requirement.</p>
-<p>The site is aimed at intermediate to advanced R users, who are comfortable writing R scripts and managing R projects. You should have a good grasp of files and directories and be generally knowledgeable about where things live on your computer.</p>
-<p>Although we will show alternatives for most Git operations, we will inevitably spend some time in the shell and we assume some prior experience. For example, you should know how to open up a shell, navigate to a certain directory, and list the files there. You should be comfortable using shell commands to view/move/rename files and to work with your command history.</p>
-</div>
-<div id="what-this-is-not" class="section level2">
-<h2><span class="header-section-number">1.9</span> What this is NOT</h2>
-<p>We aim to teach novices about Git on a strict “need to know” basis. Git was built to manage development of the Linux kernel, which is probably very different from what you do. Most people need a small subset of Git’s functionality and that will be our focus. If you want a full-blown exposition of Git as a directed acyclic graph or a treatise on the Git-Flow branching strategy, you will be sad.</p>
+<div id="linux" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Linux</h3>
+<p>Install Git via your distro’s package manager.</p>
+<p>Ubuntu or Debian Linux:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install git</code></pre></div>
+<p>Fedora or RedHat Linux:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">sudo</span> yum install git</code></pre></div>
+<p>A comprehensive list for various Linux and Unix package managers:</p>
+<p><a href="https://git-scm.com/download/linux" class="uri">https://git-scm.com/download/linux</a></p>
 
 </div>
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="install-git.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="why-git-why-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-git.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
