@@ -9,11 +9,12 @@ git config --global user.name 'Tania Allard'
 git config --global user.email 't.allard@sheffield.ac.uk'
 git config --global --list
 ```
-substituting your name and the email associated with your GitHub account.
+**substituting your name and the email associated with your GitHub account**.
 
 ## More about `git config`
 
-From RStudio, go to *Tools > Shell* and tell Git your name and **GitHub email** by typing (use your own name and email):
+From RStudio, go to *Tools > Shell* and tell Git your name and **GitHub email** by typing (use your own name and email).
+
 
 Note: If you are on Windows, check the title bar of the shell that was opened! If you see `cmd.exe` at the end of the status bar, this is the Windows Command Prompt. If you instead see `MINGW64` at the beginning, you have successfully opened Git Bash!
 
@@ -28,3 +29,11 @@ _Note: If you are **not** in an R Project that is version controlled with git, *
     - This __must__ be the email that you used to sign up for GitHub.
 
 These commands return nothing. You can check that Git understood what you typed by looking at the output of `git config --global --list`.
+
+## The latet version of Rstudio
+
+The instructions above tell you to find Tools > Shell to open up an instance of your own shell. If you have the latest version of RStudio installed you will find that a terminal is permanently running next to where your console is:
+
+<img src="images/terminal.png" alt="RStudio shell" />
+
+You should then be able to use this as you would normally use your shell in any Operative System you normally use. 
