@@ -12,7 +12,7 @@ We assume the following:
   * You've registered a free GitHub account.
   * You've installed/updated R and RStudio.
   * You've installed Git.
-  * You've introduced yourself to Git (chapter.
+  * You've introduced yourself to Git.
   * You've confirmed that you can push to / pull from GitHub from the command line.
 
 ## Make a new repo on GitHub

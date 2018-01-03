@@ -25,7 +25,7 @@
 <meta name="author" content="Tania Allard">
 
 
-<meta name="date" content="2018-01-02">
+<meta name="date" content="2018-01-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,16 +115,12 @@ code > span. { color: #1f1c1b; } /* Normal */
 <li class="chapter" data-level="1.5" data-path="why-git-why-github.html"><a href="why-git-why-github.html#who-can-do-what"><i class="fa fa-check"></i><b>1.5</b> Who can do what?</a></li>
 <li class="chapter" data-level="1.6" data-path="why-git-why-github.html"><a href="why-git-why-github.html#special-features-of-github"><i class="fa fa-check"></i><b>1.6</b> Special features of GitHub</a></li>
 <li class="chapter" data-level="1.7" data-path="why-git-why-github.html"><a href="why-git-why-github.html#whats-special-about-using-r-with-git-and-github"><i class="fa fa-check"></i><b>1.7</b> What’s special about using R with Git and GitHub?</a></li>
-<li class="chapter" data-level="1.8" data-path="why-git-why-github.html"><a href="why-git-why-github.html#audience-and-pre-reqs"><i class="fa fa-check"></i><b>1.8</b> Audience and pre-reqs</a></li>
-<li class="chapter" data-level="1.9" data-path="why-git-why-github.html"><a href="why-git-why-github.html#what-this-is-not"><i class="fa fa-check"></i><b>1.9</b> What this is NOT</a></li>
 </ul></li>
 <li class="part"><span><b>I Installation</b></span></li>
 <li class="chapter" data-level="2" data-path="install-git.html"><a href="install-git.html"><i class="fa fa-check"></i><b>2</b> Installation</a><ul>
 <li class="chapter" data-level="2.1" data-path="install-git.html"><a href="install-git.html#github-account"><i class="fa fa-check"></i><b>2.1</b> GitHub account</a></li>
 <li class="chapter" data-level="2.2" data-path="install-git.html"><a href="install-git.html#username-advice"><i class="fa fa-check"></i><b>2.2</b> Username advice</a></li>
-<li class="chapter" data-level="2.3" data-path="install-git.html"><a href="install-git.html#r-and-rstudio"><i class="fa fa-check"></i><b>2.3</b> R and Rstudio</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="install-git.html"><a href="install-git.html#more-about-r-and-rstudio"><i class="fa fa-check"></i><b>2.3.1</b> More about R and RStudio</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="install-git.html"><a href="install-git.html#r-and-rstudio"><i class="fa fa-check"></i><b>2.3</b> R and Rstudio</a></li>
 <li class="chapter" data-level="2.4" data-path="install-git.html"><a href="install-git.html#git"><i class="fa fa-check"></i><b>2.4</b> Git</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="install-git.html"><a href="install-git.html#git-already-installed"><i class="fa fa-check"></i><b>2.4.1</b> Git already installed?</a></li>
 <li class="chapter" data-level="2.4.2" data-path="install-git.html"><a href="install-git.html#windows"><i class="fa fa-check"></i><b>2.4.2</b> Windows</a></li>
@@ -134,6 +130,7 @@ code > span. { color: #1f1c1b; } /* Normal */
 </ul></li>
 <li class="chapter" data-level="3" data-path="introduction-to-git.html"><a href="introduction-to-git.html"><i class="fa fa-check"></i><b>3</b> Introduction to Git</a><ul>
 <li class="chapter" data-level="3.1" data-path="introduction-to-git.html"><a href="introduction-to-git.html#more-about-git-config"><i class="fa fa-check"></i><b>3.1</b> More about <code>git config</code></a></li>
+<li class="chapter" data-level="3.2" data-path="introduction-to-git.html"><a href="introduction-to-git.html#shell-in-the-latest-version-of-rstudio"><i class="fa fa-check"></i><b>3.2</b> Shell in the latest version of Rstudio</a></li>
 </ul></li>
 <li class="part"><span><b>II Connect Git, GitHub, RStudio</b></span></li>
 <li class="chapter" data-level="4" data-path="push-pull-github.html"><a href="push-pull-github.html"><i class="fa fa-check"></i><b>4</b> Connect to GitHub</a><ul>
@@ -226,8 +223,7 @@ code > span. { color: #1f1c1b; } /* Normal */
             <section class="normal" id="section-">
 <div id="push-pull-github" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Connect to GitHub</h1>
-<p>Objective: make sure that you can pull from and push to GitHub from your computer.</p>
-<p>I do not explain all terminal and Git commands in detail. This is a black box diagnostic / configuration exercise. In later chapters and in live workshops, we revisit these operations with much more narrative.</p>
+<p><strong>Objective:</strong> make sure that you can pull from and push to GitHub from your computer.</p>
 <div id="make-a-repo-on-github" class="section level2">
 <h2><span class="header-section-number">4.1</span> Make a repo on GitHub</h2>
 <p>Go to <a href="https://github.com" class="uri">https://github.com</a> and make sure you are logged in.</p>
@@ -240,7 +236,7 @@ YES Initialize this repository with a README</p>
 </div>
 <div id="clone-the-repo-to-your-local-computer" class="section level2">
 <h2><span class="header-section-number">4.2</span> Clone the repo to your local computer</h2>
-<p>From Rstudio open a terminal instance.</p>
+<p><strong>For the following steps use the RStudio in built terminal.</strong></p>
 <p>Take charge of – or at least notice! – what directory you’re in. <code>pwd</code> to display working directory. <code>cd</code> to move around. Personally, I would do this sort of thing in <code>~/tmp</code>.</p>
 <p>Clone <code>myrepo</code> from GitHub to your computer. This URL should have <strong>your GitHub username</strong> and the name of <strong>your practice repo</strong>. If your terminal cooperates, you should be able to paste the whole <code>https://....</code> bit that we copied above. But some shells are not (immediately) clipboard aware. In that sad case, you must type it. <strong>Accurately.</strong></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</code></pre></div>
@@ -326,6 +322,7 @@ YES Initialize this repository with a README</p>
 </div>
 <div id="am-i-really-going-to-type-github-username-and-password-on-each-push" class="section level2">
 <h2><span class="header-section-number">4.5</span> Am I really going to type GitHub username and password on each push?</h2>
+<p><img src="images/much_typing.png" alt="too much typing" /></p>
 <p>It is likely that your first push, above, leads to a challenge for your GitHub username and password.</p>
 <p>This will drive you crazy in the long-run and make you reluctant to push. Do one of the following to eliminate this annoyance:</p>
 <ul>
@@ -336,11 +333,15 @@ YES Initialize this repository with a README</p>
 </div>
 <div id="clean-up" class="section level2">
 <h2><span class="header-section-number">4.6</span> Clean up</h2>
-<p><strong>Local</strong> When you’re ready to clean up, you can delete the local repo any way you like. It’s just a regular directory on your computer.</p>
+<ul>
+<li><strong>Local</strong>: When you’re ready to clean up, you can delete the local repo any way you like. It’s just a regular directory on your computer.</li>
+</ul>
 <p>Here’s how to do that in the shell, if current working directory is <code>myrepo</code>:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ..
 <span class="fu">rm</span> -rf myrepo/</code></pre></div>
-<p><strong>GitHub</strong> In the browser, go to your repo’s landing page on GitHub. Click on “Settings”.</p>
+<ul>
+<li><strong>GitHub</strong>: In the browser, go to your repo’s landing page on GitHub. Click on “Settings”.</li>
+</ul>
 <p>Scroll down, click on “delete repository,” and do as it asks.</p>
 
 </div>

@@ -1,7 +1,7 @@
 ---
 title: "R and Git combo"
 author: "Tania Allard"
-date: "2018-01-02"
+date: "2018-01-03"
 site: bookdown::bookdown_site
 description: "Winning R and Git combo!"
 output:

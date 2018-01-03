@@ -30,10 +30,11 @@ _Note: If you are **not** in an R Project that is version controlled with git, *
 
 These commands return nothing. You can check that Git understood what you typed by looking at the output of `git config --global --list`.
 
-## The latet version of Rstudio
+## Shell in the latest version of Rstudio
 
 The instructions above tell you to find Tools > Shell to open up an instance of your own shell. If you have the latest version of RStudio installed you will find that a terminal is permanently running next to where your console is:
 
 <img src="images/terminal.png" alt="RStudio shell" />
 
-You should then be able to use this as you would normally use your shell in any Operative System you normally use. 
+You should then be able to use this as you would normally use your shell in your Operative System.
+

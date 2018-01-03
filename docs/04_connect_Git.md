@@ -2,9 +2,8 @@
 
 # Connect to GitHub {#push-pull-github}
 
-Objective: make sure that you can pull from and push to GitHub from your computer.
+**Objective:** make sure that you can pull from and push to GitHub from your computer.
 
-I do not explain all terminal and Git commands in detail. This is a black box diagnostic / configuration exercise. In later chapters and in live workshops, we revisit these operations with much more narrative.
 
 ## Make a repo on GitHub
 
@@ -22,7 +21,7 @@ Copy the HTTPS clone URL to your clipboard via the green "Clone or Download" but
 
 ## Clone the repo to your local computer
 
-From Rstudio open a terminal instance.
+**For the following steps use the RStudio in built terminal.**
 
 Take charge of -- or at least notice! -- what directory you're in. `pwd` to display working directory. `cd` to move around. Personally, I would do this sort of thing in `~/tmp`.
 
@@ -144,6 +143,8 @@ If you have made it this far, you are ready to graduate to using Git and GitHub 
 
 ## Am I really going to type GitHub username and password on each push?
 
+<img src="images/much_typing.png" alt="too much typing" />
+
 It is likely that your first push, above, leads to a challenge for your GitHub username and password.
 
 This will drive you crazy in the long-run and make you reluctant to push. Do one of the following to eliminate this annoyance:
@@ -155,7 +156,7 @@ Now is the perfect time to do this, since you have a functioning test repo.
 
 ## Clean up
 
-**Local** When you're ready to clean up, you can delete the local repo any way you like. It's just a regular directory on your computer.
+- **Local**: When you're ready to clean up, you can delete the local repo any way you like. It's just a regular directory on your computer.
 
 Here's how to do that in the shell, if current working directory is `myrepo`:
 
@@ -164,6 +165,6 @@ cd ..
 rm -rf myrepo/
 ```
 
-**GitHub** In the browser, go to your repo's landing page on GitHub. Click on "Settings".
+- **GitHub**: In the browser, go to your repo's landing page on GitHub. Click on "Settings".
 
 Scroll down, click on "delete repository," and do as it asks.

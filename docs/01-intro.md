@@ -24,7 +24,9 @@ Don't get too caught up on public versus private at this point. There are many w
 
 ## Is it going to hurt?
 
-<img src="images/porg.png" alt="porg" >
+<img src="images/porg.png" alt="porg"/>
+
+**YES**
 
 You have to install Git, get local Git talking to GitHub, and make sure RStudio can talk to local Git (and, therefore, GitHub). This is one-time or once-per-computer pain.
 
@@ -64,7 +66,6 @@ There is also a formal notion of an organization, which can be useful for managi
 
 ## Special features of GitHub
 
-*this is perhaps too detailed ... full stop? or does it belong elsewhere?*
 
 In addition to a well-designed user interface, GitHub offers two especially important features:
 
@@ -80,15 +81,3 @@ In addition to a well-designed user interface, GitHub offers two especially impo
   * The active R package development community on GitHub. Read about R-specific GitHub resources and searching [here](#search).
   * Specific workflows make it rewarding to share source code, rendered reports, and entire projects. Read more about [R Markdown](#rmd-test-drive), [R scripts](#r-test-drive), and [R-heavy projects](#repo-browsability).
   * Git- and GitHub-related features of the [RStudio IDE](https://www.rstudio.com/products/rstudio-desktop/). This is covered throughout.
-
-## Audience and pre-reqs
-
-The target audience for this site is someone who analyzes data, probably with R, though some of the content may be useful to analysts using other languages. R package development with Git(Hub) is absolutely in scope, but it is not an explicit focus or requirement.
-
-The site is aimed at intermediate to advanced R users, who are comfortable writing R scripts and managing R projects. You should have a good grasp of files and directories and be generally knowledgeable about where things live on your computer.
-
-Although we will show alternatives for most Git operations, we will inevitably spend some time in the shell and we assume some prior experience. For example, you should know how to open up a shell, navigate to a certain directory, and list the files there. You should be comfortable using shell commands to view/move/rename files and to work with your command history.
-
-## What this is NOT
-
-We aim to teach novices about Git on a strict "need to know" basis. Git was built to manage development of the Linux kernel, which is probably very different from what you do. Most people need a small subset of Git's functionality and that will be our focus. If you want a full-blown exposition of Git as a directed acyclic graph or a treatise on the Git-Flow branching strategy, you will be sad.
